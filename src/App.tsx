@@ -12,58 +12,14 @@ const App = () => {
   const [posts, setPosts] = useState<Post[]>([
     {
       id: 1,
-      title: 'Khám phá React và TypeScript - Công nghệ hiện đại',
+      title: 'Khám phá React và TypeScript',
       author: 'Nguyễn Văn A',
-      thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500',
-      content: 'React và TypeScript là sự kết hợp hoàn hảo cho phát triển ứng dụng web hiện đại. TypeScript mang đến type safety, giúp phát hiện lỗi sớm trong quá trình phát triển. React cung cấp component-based architecture giúp tái sử dụng code hiệu quả. Việc kết hợp hai công nghệ này giúp xây dựng ứng dụng scalable và maintainable.',
+      thumbnail: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAh1BMVEUxeMb///8weMY0esYmdMUsdsUBZr+ApNWYsdwjcsTk7PcOacCoveAAYb2Ystv2+v24yeZplM+NqtjAzedSiMrt8/pfjc3E1OsZbsKmvuFOhcnO2+4tccIAYL2bt96vweJ5ntTT3/BymtJlkc7b5vTo7/gASrXI1+wAWLpPgMeKpta6zeixx+XeClMeAAAKzUlEQVR4nO2ca2OiOhCGCZAoRESpl6itt9rjWv3/v+9MEi7BC2Va7XZ35/1QIYZAHieTmQD1AlJreYHvkVrJB1i/+xr+HBEshAgWQgQLIYKFEMFCiGAhRLAQIlgIESyECBZCBAshgoUQwUKIYCFEsBAiWAgRLIQIFkIECyGChRDBQohgIUSwECJYCBEshAgWQgQLIYKFEMFCiGAhRLAQIlgIESyECBZCBAshgoUQwUKIYCFEsBAiWAgRLIQIFkIECyGChRDBQohgIUSwECJYCBEshAgWQgQLIYKFEMFCiGAhRLAQugbL/5p+Qy++SQ+A9ffSIlgIESyEGmCFUqAkw38XVjTcxSjt1upfhcUDhtac/6Owwg4eVj8kWK3VJVgEq9AfDcvnnH/nT/MoWJG6qvB+V+5HQnlBEAoV8Tb1efTlkz8IlnoaXNOxczdaKpjF5qTjfT9oQYsfnjL1xXM+CFZyo8Yq+uL1FhIzA+ot1R/bFrAE1Fu3MsHb+kNhiQ1jg5HJG+bdt7aw3pvsOpQftvJnwhJTiIDzzvHo416CovV4Khu/300+audBsEQ6zmW+KPbS3l1g8SFjB6z3C5MmlxUkKRv9Jli8yK7/M07lPcl3v+pireSCHZus5Loal4SDZPzbYJVKUvsFumuNHQNffdcWfwasAA3rRlDrFvuRztmbWvDPCq7W4275T4MVRlrut0UB15+6Clfy+flZqvpV+6E0xbJArhh7vdExqKqen5XQgWqoIk0WjtVH5kGp/YAmy2r6qDB8GbN5BJ9hQ0rwfbCibNXr9VbOxShTMPf5EDZWWeTJ+VFPCOPpq3AaiWS20a2M91vBbaO3bDWU66mZUuLenPPtvhtxOYOCdAJ7Kx05wAdEWyE0aatxPeOoTqezTVkXPjqZd5vW98EK16ZO5Wz0nAZKvLCvP/dKDMqWNlU4IN7TsnjnmaPlnsUvV/y1HGpS8U6H9ulLmLGB4nAw7G952GNPML1EKzaLJJBh4zjWDWfSC17cTjSkA984DO3mvpzG5FHvz6Ic1vTXzmlqLPNmxLF2ioPuCp/AceKiK8kKmp/oxXA5GYw1rNML2AsUBKMSVo/NkhlLu57UAe2CsaUM1HK5zFI2g4/l7EdYlheZDIWVnRRml/Mc1mBVa2tj64mnfHdqUaYGooTSQXJmAtowJ8IsQ/hcBSHAWvXYXGmnCCcpYS3XYLjWWXEBvRyG2nn+Ap+ltO9s8PJfhQXGPG4Ji3NTqRiHdhRqJhaWHjun7XzUz9szOUzUNdsnJZXgBtfAWKbYwwEH5Z5KZTCEqpgX8GRsxsrk2YHFdkl5oOyzVHj3mg3jw+RCB/vVrjtX2ujVoXNsAcsTC71djENwPDkSC4uxN64455HOZfSJoQ/82Wwujb/nyZvesT+9WMLmTDpwoOprLT8AWONxUnSvgsWYO9smsfn57gNrl/ALGYc4nsDE61uFL21g8a2pZceXL82o0js5rDR36r6FwgIf5kt7CfYarS1m1jLVSM9yHVF0UA3You7GAJYzaTqwem4eAfPOQt4Nlgj8M5nZY1feJtSSbWDlLt6OQzs5zlQF672wi3yaBCo2Hx8WnTC7i9wyudCH7Q625z54wLNEWMPyyiIHVujW05ee3NuyLJTKsqQpgShSqogHohUs6+KnpnvSjEkzT+ewqtjKMjpFfGQ2XkywGIbRi/Zr49J+1LMesH2RA07PogmAlZaj0IH1lrj1AhiHgPROPsubGxk2Qb6tTVnvyuFps5n2D6IdrNzF6975ypqtV8LaVKmx3FgTstcwfu/men+rhrFpT75C8wtNOVqy8xUYgOW0WcGa1rN59aTTgfumO1Lb0bbcNfBUEUXGo1awcnMyTv1db9lV5jx0qLxzNLD0wh67ItczhTpY08jVlC3Pln8AlsOlgjWo14MwdfgQWMPabu6pKn0Iy9LWJiA2Vb9vw1qxK6q5cV97LvB88DNkZxmQDkp/ECyBhZW7eOHzyPBR12Gpp9awADtUUv7nYanjg4ZhBct4/HCEhRXp8EhnaobPgV+HJUz4eVQmKGL7w8jV6xkTbd+dEKK2K8OwDSw4GQQpD4W1NlzC5ykOlnXxU2VwxInnwDpWHbMH9UN7DTtRj/LOL1fEMHHCYDpz3DdhPdXrwcnEvdezzmDFSR5gec5QabH4Z1184um/xbixsN7KmT+PGF65TphN7UaBUQ0iuNxxchE6XIUV1+rxAELGB8OCZN4Gq1ypcs5qAcs2MezbJl1Y1eJnnu+IIuB6d8aNf9kh4L+KtMkeLoLSq7BYLVcGx9C/W7pzCxbLkiJQVV7cGpYdYr0N/HkqgqAcVmzT2yCyZ9HeX1lsz1XSoi7Xk6GbEILAwH6qB1o3Yc3ccShS9swfDostAlngsoFAK1jGxZtlt/LaikR6I1XIQ5GfRAf33Kbs6QjSUM5DJdapDtJqfkvPMsr3+Cu0WPP9N2EZOrnkyd4oCsTbQ2GBo56LPEEsmHwMK19IAB9VuiILCyqmq/XWrvcytrRJUR72bvrD4bBzTE2iyOdBtW4QqtSGIHLqLtGAud+CdWLjch1Wrg1pz3i+Dx/E+BIsMJGtMLWjrC2s3MXDZFd2zMI67d2Gd3k0JXb1ExpYQ7byhNLpokq2ab6q6oNtsG2iTZBHYjKVt2D1l2wMv7KulnRLc4z6bPcCZarBvL4IC3plnrrlYWtYRSPVyl2xrBxXre6LyNMXi/r5Jty2sFtl605X3+CI8/75Cowy7r/O59tlDHPjLVizF0iRNtnkMNHrjMUaGIdkdT86DDeH27S+DIvFogzmr8CyC11918DtctXeyXEtLCWKKORt7UTpYl0txbLjQfct6mzKkrRfLmn54r2suhuGYdeN3fIMWsOKRFZUW/Bq7nB85Z1hVXdcTDAfJNdheWAH2h3XbmeakeXc+CtgeUp1ZsdTBmPEbSIU8+w4nU5P2ai4oxhKNew/TafH/kREtaqTpakZAEEdZVQngT29PG9geZHcnqbTp8xznymJOBw7mzc4rs/CUovaNzanvvaYpF0McwtMyDl2Is0SlueHkVLhxU8L86B5bND5ArJLXXRxe8EW25p+7bx2z8LSd3zVxZn0sY1PEX46NxSjqbGu2CzWWAKtnim1d8DcRK6C9XgVsD6lT8PyuZTeaBQKE2vZoLsNrHxdx/1R/35Yxp6K5eY86G4BK7C3nWurmn8hrKDus4obO+DcuXhlbWDpyCjp56yd8r8P1i8ppajWrwbzRJr7CJFK5sU6TTMsdep3ujaW6tfA/FxYZ96+NazFBuSG0+l+1X3vZL190x1pV7I8+vwG34+FdaZvfMPC3rNhVSpTiGBdqrCsi+dfikeOPtsHjMwjR589+Pb7hqMmLNf12vi+oVrGcbzoRxdQ+HAFyu71PkGj7MNsn9TtN1nVEstqKf3G2TAy7wZfuVRubjh/tgs48WsX0FK3YXlKSJSE8pphwdn+7P+4QW/fI0SwEKJ/r4IQwUKI/ssRQgQLIYKFEMFCiGAhRLAQIlgIESyECBZCBAshgoUQwUKIYCFEsBAiWAgRLIQIFkIECyGChRDBQohgIUSwECJYCBEshAgWQgQLIYKFEMFCiGAhRLAQIlgIESyECBZCBAshgoUQwUKIYCFEsBAiWAgRLIQIFkIECyGChRDBQohgIUSwECJYCAGsv/gFwfvKB1ik1vof60S+nFiPR0QAAAAASUVORK5CYII=',
+      content: 'React và TypeScript là sự kết hợp hoàn hảo cho phát triển ứng dụng web hiện đại. ',
       category: 'Công nghệ',
       date: '28/10/2025'
     },
-    {
-      id: 2,
-      title: 'Du lịch Đà Lạt - Thành phố ngàn hoa',
-      author: 'Trần Thị B',
-      thumbnail: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=500',
-      content: 'Đà Lạt là một trong những địa điểm du lịch hấp dẫn nhất Việt Nam với khí hậu mát mẻ quanh năm. Thành phố này nổi tiếng với những vườn hoa đẹp, hồ Xuân Hương thơ mộng, và các quán cà phê độc đáo. Đừng quên thử các món đặc sản như bánh tráng nướng, sữa đậu nành và dâu tây tươi.',
-      category: 'Du lịch',
-      date: '27/10/2025'
-    },
-    {
-      id: 3,
-      title: 'Món phở Hà Nội - Tinh hoa ẩm thực Việt',
-      author: 'Lê Văn C',
-      thumbnail: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=500',
-      content: 'Phở là món ăn truyền thống của người Việt, đặc biệt là phở Hà Nội với hương vị đậm đà khó quên. Nước dùng được ninh từ xương trong nhiều giờ, thịt bò tái mỏng, bánh phở mềm dai. Một tô phở nóng hổi là lựa chọn hoàn hảo cho bữa sáng hay bất cứ thời điểm nào trong ngày.',
-      category: 'Ẩm thực',
-      date: '26/10/2025'
-    },
-    {
-      id: 4,
-      title: 'Cân bằng công việc và cuộc sống trong thời đại số',
-      author: 'Phạm Thị D',
-      thumbnail: 'https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=500',
-      content: 'Trong thời đại công nghệ phát triển, việc cân bằng giữa công việc và cuộc sống cá nhân trở nên quan trọng hơn bao giờ hết. Hãy dành thời gian cho gia đình, bạn bè và sở thích cá nhân. Tập thể dục đều đặn, ăn uống lành mạnh và ngủ đủ giấc là những yếu tố quan trọng cho sức khỏe tinh thần và thể chất.',
-      category: 'Đời sống',
-      date: '25/10/2025'
-    },
-    {
-      id: 5,
-      title: 'Trí tuệ nhân tạo đang thay đổi thế giới như thế nào',
-      author: 'Hoàng Văn E',
-      thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500',
-      content: 'AI đang cách mạng hóa mọi ngành công nghiệp từ y tế, giáo dục đến tài chính. Machine Learning và Deep Learning cho phép máy tính học hỏi từ dữ liệu và đưa ra quyết định thông minh. Các ứng dụng như ChatGPT, DALL-E đang mở ra những khả năng mới cho sáng tạo và năng suất làm việc.',
-      category: 'Công nghệ',
-      date: '24/10/2025'
-    },
-    {
-      id: 6,
-      title: 'Những bí quyết chụp ảnh du lịch đẹp lung linh',
-      author: 'Võ Thị F',
-      thumbnail: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=500',
-      content: 'Để có những bức ảnh du lịch đẹp, bạn cần chú ý đến ánh sáng tự nhiên, góc chụp sáng tạo và composition. Golden hour (sáng sớm và chiều tà) là thời điểm lý tưởng nhất. Hãy thử nghiệm với các góc độ khác nhau, sử dụng rule of thirds, và đừng ngại post-processing để ảnh thêm sinh động.',
-      category: 'Du lịch',
-      date: '23/10/2025'
-    }
+ 
   ]);
 
   const handleDeletePost = (id: number) => {
